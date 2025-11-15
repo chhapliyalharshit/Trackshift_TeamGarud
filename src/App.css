@@ -1,0 +1,738 @@
+* F1 Premium Racing Control Center UI Design */ :root {
+  /* F1 Premium Color Palette - Racing Theme */
+  --f1-red: #ff1801;
+  --f1-dark: #0f0f0f;
+  --f1-darker: #050505;
+  --f1-gray: #262626;
+  --f1-light-gray: #3a3a3a;
+  --f1-accent: #ffc800;
+  --f1-success: #00d084;
+  --f1-warning: #ff8800;
+  --f1-danger: #ff3333;
+  --f1-white: #ffffff;
+}
+
+/* Base Styles */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: "white";
+  min-height: 100vh;
+  font-family: "Titillium Web", sans-serif;
+  background: linear-gradient(
+    135deg,
+    var(--f1-darker) 0%,
+    var(--f1-dark) 50%,
+    var(--f1-darker) 100%
+  );
+  color: var(--f1-white);
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1600px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Premium Card Container */
+.card-content {
+  padding: 1.5rem;
+  background: linear-gradient(
+    145deg,
+    rgba(15, 15, 15, 0.8) 0%,
+    rgba(5, 5, 5, 0.95) 100%
+  );
+  border-radius: 12px;
+  border: 1px solid rgba(255, 24, 1, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 0 20px rgba(255, 24, 1, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Classification Table Styles */
+.classification-header,
+.classification-row {
+  display: grid;
+  text-align: center;
+  align-items: center;
+  font-family: "Courier New", monospace;
+  font-size: 0.75rem;
+  line-height: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  gap: 8px;
+}
+
+.classification-header {
+  border-bottom: 2px solid var(--f1-red);
+  padding: 1rem 0.75rem;
+  font-weight: 700;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 24, 1, 0.1) 0%,
+    rgba(255, 24, 1, 0.05) 100%
+  );
+  border-radius: 8px 8px 0 0;
+  box-shadow: inset 0 1px 3px rgba(255, 24, 1, 0.1);
+}
+
+.classification-row {
+  border-bottom: 1px solid rgba(255, 24, 1, 0.08);
+  padding: 0.75rem;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.classification-row:hover {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 24, 1, 0.08) 0%,
+    transparent 100%
+  );
+  border-left: 3px solid var(--f1-red);
+  padding-left: calc(0.75rem - 3px);
+}
+
+/* Driver Cell with Color Indicator */
+.driver-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+  font-weight: 600;
+  justify-self: start;
+}
+
+.driver-dot-stack {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.driver-big-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 8px currentColor;
+}
+
+.driver-dot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.race-nav-item {
+  color: "white";
+}
+/* Navigation and Controls */
+.race-nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 24, 1, 0.15);
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.toggle-control {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--f1-white);
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 24, 1, 0.08) 0%,
+    rgba(255, 24, 1, 0.03) 100%
+  );
+  border-radius: 6px;
+  border: 1px solid rgba(255, 24, 1, 0.12);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+
+.toggle-control:hover {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 24, 1, 0.12) 0%,
+    rgba(255, 24, 1, 0.05) 100%
+  );
+  border-color: rgba(255, 24, 1, 0.2);
+}
+
+.toggle-control input[type="checkbox"] {
+  cursor: pointer;
+  accent-color: var(--f1-red);
+}
+
+/* Premium Button Styles */
+.race-nav-button,
+.back-to-menu-btn {
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(145deg, var(--f1-red) 0%, #cc1400 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: var(--f1-white);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 24, 1, 0.3),
+    inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.race-nav-button:hover:not(:disabled),
+.back-to-menu-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 24, 1, 0.4),
+    inset 0 1px 2px rgba(255, 255, 255, 0.15);
+}
+
+.race-nav-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Layout Containers */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 24, 1, 0.05) 0%,
+    rgba(255, 24, 1, 0.02) 100%
+  );
+}
+
+.sidebar {
+  flex: 0 0 350px;
+}
+
+.race-track-bg {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 24, 1, 0.1), 0 8px 32px rgba(0, 0, 0, 0.6);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 24, 1, 0.08);
+}
+
+/* Animation for pit lane */
+@keyframes pitLaneGlow {
+  0% {
+    stroke-opacity: 0.4;
+  }
+  50% {
+    stroke-opacity: 0.8;
+  }
+  100% {
+    stroke-opacity: 0.4;
+  }
+}
+
+.pit-lane-path {
+  animation: pitLaneGlow 2s ease-in-out infinite;
+}
+
+/* Driver Cards */
+.driver-card {
+  background: linear-gradient(
+    145deg,
+    rgba(15, 15, 15, 0.9) 0%,
+    rgba(5, 5, 5, 0.95) 100%
+  );
+  padding: 10px;
+  border-radius: 12px;
+  width: 200px;
+  color: var(--f1-white);
+  overflow: hidden;
+  border: 1px solid rgba(255, 24, 1, 0.15);
+  display: inline-block;
+  margin: 0.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 0 20px rgba(255, 24, 1, 0.08);
+  transition: all 0.3s ease;
+}
+
+.driver-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 24, 1, 0.3);
+  box-shadow: 0 12px 32px rgba(255, 24, 1, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08), 0 0 24px rgba(255, 24, 1, 0.15);
+}
+
+.team-header {
+  padding: 1rem;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 24, 1, 0.15) 0%,
+    rgba(255, 24, 1, 0.08) 100%
+  );
+  border-bottom: 2px solid var(--f1-red);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.team-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tire-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 24, 1, 0.1) 0%,
+    rgba(255, 24, 1, 0.05) 100%
+  );
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 24, 1, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.75rem;
+}
+
+.tire-health-bar {
+  flex: 1;
+  height: 10px;
+  width: 150px;
+  background: rgba(255, 24, 1, 0.15);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 24, 1, 0.2);
+}
+
+.tire-health-bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: var(--health-percentage);
+  background: linear-gradient(
+    90deg,
+    var(--health-color) 0%,
+    color-mix(in srgb, var(--health-color) 80%, white) 100%
+  );
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px var(--health-color);
+}
+
+.tire-letter {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* Pace Controls */
+.pace-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.75rem;
+  background: rgba(255, 24, 1, 0.05);
+  border-radius: 8px;
+}
+
+.pace-label {
+  text-align: left;
+  color: var(--f1-white);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pace-buttons {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.pace-btn {
+  flex: 1;
+  padding: 0.5rem 0.3rem;
+  border-radius: 6px;
+  background: linear-gradient(
+    145deg,
+    rgba(38, 38, 38, 0.8) 0%,
+    rgba(15, 15, 15, 0.95) 100%
+  );
+  border: 1px solid rgba(255, 24, 1, 0.08);
+  color: var(--f1-white);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.pace-btn:hover {
+  background: linear-gradient(145deg, #243447 0%, #1a2334 100%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid #8b5cf6;
+}
+
+.pace-btn.active {
+  background: linear-gradient(
+    145deg,
+    var(--team-color) 0%,
+    color-mix(in srgb, var(--team-color) 70%, black) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3),
+    0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+/* Pit Strategy Controls */
+.pit-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.pit-label {
+  text-align: left;
+  color: #94a3b8;
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pit-btn {
+  width: 100%;
+  padding: 0.45rem;
+  height: 28px;
+  box-sizing: border-box;
+  background: linear-gradient(
+    145deg,
+    var(--team-color) 0%,
+    color-mix(in srgb, var(--team-color) 70%, black) 100%
+  );
+  color: var(--f1-white);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.525rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.pit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Events Panel */
+.events-container {
+  overflow-y: auto;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(145deg, #1a2234 0%, #0c1220 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.event-row {
+  display: flex;
+  padding: 0.6rem;
+  border-bottom: 1px solid rgba(255, 24, 1, 0.08);
+  font-size: 0.7rem;
+  transition: all 0.2s ease;
+}
+
+.event-row:hover {
+  background: rgba(255, 24, 1, 0.08);
+  border-left: 3px solid var(--f1-red);
+  padding-left: calc(0.6rem - 3px);
+}
+
+.event-time {
+  color: var(--f1-accent);
+  margin-right: 1rem;
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  min-width: 50px;
+}
+
+.event-details {
+  flex: 1;
+  text-align: left;
+  color: #e5e7eb;
+}
+
+/* Race Info Display */
+.race-info {
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 24, 1, 0.12) 0%,
+    rgba(255, 24, 1, 0.05) 100%
+  );
+  border-radius: 8px;
+  color: var(--f1-white);
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 24, 1, 0.15);
+  box-shadow: inset 0 1px 2px rgba(255, 24, 1, 0.1),
+    0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.race-info .text-xl {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--f1-accent);
+}
+
+/* Results Grid */
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.drivers-results h3,
+.teams-results h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  color: var(--f1-white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--f1-red);
+  padding-bottom: 0.5rem;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--f1-dark);
+  border-radius: 8px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  color: var(--f1-white);
+  border: 1px solid rgba(255, 24, 1, 0.2);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 24, 1, 0.15);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: var(--f1-white);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 1rem;
+}
+
+/* Pre-Race Menu */
+.pre-race-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0.5rem auto;
+  padding: 0 1rem;
+}
+
+.pre-race-menu {
+  background: var(--f1-dark);
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--f1-white);
+}
+
+.pre-race-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.pre-race-panel {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.panel-header {
+  padding: 1rem;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--f1-white);
+  text-transform: uppercase;
+}
+
+/* Utility Classes */
+.text-xl {
+  font-size: 1.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.text-gray-500 {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
+/* Spinner Animation */
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--f1-white);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .layout-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 0.5rem;
+  }
+
+  .card-content {
+    padding: 1rem;
+  }
+
+  .classification-header,
+  .classification-row {
+    font-size: 0.65rem;
+    line-height: 1.4rem;
+  }
+
+  .driver-card {
+    width: 160px;
+    margin: 0.3rem;
+  }
+
+  .pre-race-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,60 @@
+# React / Node
+node_modules/
+dist/
+build/
+.eslintcache
+.cache/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.development
+.env.local
+.env.production
+.env.test
+.env.*.local
+
+# Vite
+.vite/
+*.tsbuildinfo
+
+# MacOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+__MACOSX/
+
+# IDE / Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Optional: if using TypeScript
+*.tsbuildinfo
+
+# Optional: if using Tailwind JIT
+.tailwindcache/
+
+# Optional: if using JetBrains IDEs
+*.iml
+out/
+
+# Optional: if using Storybook
+storybook-static/
+
+# Optional: if using Firebase
+.firebaserc
+firebase-debug.log
+
+# Optional: if using local SSL certs
+*.pem
+
+# Optional: coverage (Jest)
+coverage/
+
+# Optional: local data
+*.local
