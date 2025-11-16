@@ -82,8 +82,8 @@ export const MAX_LAPS = 12;
 export const FOLLOWING_PENALTY = 0.7;
 
 /** Pit lane parameters */
-export const PITLANE_LENGTH = 100; // Length of pit lane in pixels
-export const PITLANE_SPEED = 4;    // Speed limit in pit lane in px/s
+export const PITLANE_LENGTH = 50; // Length of pit lane in pixels
+export const PITLANE_SPEED = 8;    // Speed limit in pit lane in px/s
 
 /**
  * Calculate total time penalty for making a pit stop
