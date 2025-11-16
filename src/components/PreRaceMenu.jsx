@@ -600,31 +600,21 @@ const PreRaceMenu = ({
                         } finally {
                           setLoading(false);
                         }
-                      }}
-                    >
-                      Generate AI Strategies{" "}
-                      {loading && (
-                        <div
-                          className="spinner"
-                          style={{ marginLeft: "8px", verticalAlign: "middle" }}
-                        />
-                      )}
-                    </Button>
-                    <Button
-                      variant="contained"
-                      color="success"
-                      fullWidth
-                      startIcon={<PlayArrowIcon />}
-                      disabled={!allTiresSelected()}
-                      sx={{
+                      <Button
+                        variant="contained"
+                        color="success"
+                        fullWidth
+                        startIcon={<PlayArrowIcon />}
+                        disabled={!allTiresSelected()}
+                        sx={{
                         opacity: allTiresSelected() ? 1 : 0.5,
                         "&.Mui-disabled": {
                           backgroundColor: "#2e7d32",
                           opacity: 0.5,
                           color: "#fff",
                         },
-                      }}
-                      onClick={() => {
+                        }}
+                        onClick={() => {
                         const grid = startingGrid.map((name, index) => {
                           const car = cars.find((c) => c.name === name);
                           return {
