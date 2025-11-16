@@ -1,4 +1,4 @@
-# Trackshift / Team Garud 🏎️
+# Trackshift / Team Garud 
 
 An interactive F1-style racing simulator built with React that combines real-time race physics with AI-powered team strategy management. Race against AI opponents, manage tire strategies, and experience dynamic pit stop decisions with live recommendations.
 
@@ -129,7 +129,7 @@ The system considers:
 - Pit stop time penalty (~21 seconds)
 - Compound-specific performance characteristics
 
-## 🏗️ Project Structure
+##  Project Structure
 ```
 Trackshift_TeamGarud/
 ├── src/
@@ -289,7 +289,7 @@ if (cond > 80 && totalLossIfNoPit < PITSTOP_TIME_PENALTY * 0.5) {
 // Adjust thresholds (80, 40, 60) and multipliers (0.5, 0.7)
 ```
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Common Issues
 
