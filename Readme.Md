@@ -1,6 +1,6 @@
 # Trackshift / Team Garud 
 
-An interactive F1-style racing simulator built with React that combines real-time race physics with AI-powered team strategy management. Race against AI opponents, manage tire strategies, and experience dynamic pit stop decisions with live recommendations.
+An interactive F1-style racing simulator built with React that combines real-time race physics with AI-powered team strategy management. Race against AI opponents, manage tire strategies, and experience dynamic pit stop decisions with live recommendations. Try it here - https://trackshift-team-garud.vercel.app/
 
 ![Team Garud Racing Simulator](https://img.shields.io/badge/Racing-Simulator-orange?style=for-the-badge)
 ![React](https://img.shields.io/badge/React-18.3.1-61DAFB?style=for-the-badge&logo=react)
