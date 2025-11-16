@@ -653,7 +653,7 @@ const PreRaceMenu = ({
                   <Button
                     variant="text"
                     startIcon={<GitHubIcon />}
-                    href="https://github.com/dawid-maj/FormulaGPT"
+                    href="https://github.com/chhapliyalharshit/Trackshift_TeamGarud"
                     target="_blank"
                     rel="noopener noreferrer"
                     sx={{
