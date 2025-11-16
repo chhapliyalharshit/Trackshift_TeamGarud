@@ -17,7 +17,7 @@ const App = dynamic(() => import('../src/App').then(mod => ({ default: mod.defau
       color: '#FFFFFF',
       fontSize: '1.2rem'
     }}>
-      Loading FormulaGPT...
+      Loading Trackshift...
     </div>
   )
 })
