@@ -324,7 +324,7 @@ MIT License - feel free to use this project for learning and development.
 
 ## 📧 Contact
 
-- **GitHub**: [chhapliyalharshit](https://github.com/chhapliyalharshit)
+- **Email**: [parthkhannawork@gmail.com]
 - **Repository**: [Trackshift_TeamGarud](https://github.com/chhapliyalharshit/Trackshift_TeamGarud)
 
 ---
