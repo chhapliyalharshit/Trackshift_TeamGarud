@@ -21,7 +21,7 @@ An interactive F1-style racing simulator built with React that combines real-tim
 - **Multi-Team Support**: Manage multiple teams with different AI models
 - **Strategy Conversation History**: Review AI reasoning and decisions
 
-### Pit Stop Recommender System (NEW! 🎉)
+### Pit Stop Recommender System (TBA)
 - **Live Recommendations**: Real-time pit stop advice for every car
 - **Strategic Analysis**: Calculates optimal pit windows based on:
   - Current tire condition and degradation
@@ -324,7 +324,7 @@ MIT License - feel free to use this project for learning and development.
 
 ## 📧 Contact
 
-- **Email**: [parthkhannawork@gmail.com]
+- **Email**: parthkhannawork@gmail.com , harshitchhapliyal05@gmail.com , neev1488@gmail.com
 - **Repository**: [Trackshift_TeamGarud](https://github.com/chhapliyalharshit/Trackshift_TeamGarud)
 
 ---
